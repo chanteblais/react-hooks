@@ -1,9 +1,25 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { useForm } from "./useForm"
 
 const App = () => {
-  return <div>hey</div>
+  const [values, handleChange] = useForm({ email: "", password: "" })
+
+  return (
+    <div>
+      <input 
+        type="email"
+        name="email" 
+        value={values.email} 
+        onChange={handleChange} 
+      />
+      <input 
+        type="password" 
+        name="password" 
+        value={values.password} 
+        onChange={handleChange} 
+      />
+    </div>
+  )
 }
 
-export default App;
+export default App
